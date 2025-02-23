@@ -1,19 +1,14 @@
 import Navbar from "@/components/Navbar";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Montserrat } from "next/font/google";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const montserrat = Montserrat({
+  variable: "--font-Montserrat",
   subsets: ["latin"],
 });
 
 export const metadata = {
-  title: "Raip Anime List",
+  title: "Deer Anime List",
   description: "Website Anime Indonesia",
 };
 
@@ -21,7 +16,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${montserrat.className} bg-color-secondary/80`}
         suppressHydrationWarning={true}
       >
         <Navbar />
