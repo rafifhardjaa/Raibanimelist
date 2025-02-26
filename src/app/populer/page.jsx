@@ -2,7 +2,7 @@
 import Animelist from '@/components/Animelist';
 import HeaderMenu from '@/components/Utillities/HeaderMenu';
 import Pagination from '@/components/Utillities/Pagination';
-import { getAnimeResponse } from '../libs/APIs';
+import { getAnimeResponse } from '../../libs/APIs';
 import React, { useEffect } from 'react';
 
 const populer = () => {

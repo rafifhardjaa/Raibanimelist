@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { getAnimeResponse } from "@/app/libs/APIs";
+import { getAnimeResponse } from "@/libs/APIs";
 import VideoPlayer from "@/components/Utillities/VideoPlayer";
 
 const Page = async ({ params: { id } }) => {
