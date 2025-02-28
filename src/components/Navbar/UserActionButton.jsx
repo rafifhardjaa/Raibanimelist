@@ -1,4 +1,5 @@
-export const userActionButton = () => {
+import Link from 'next/link';
+export const UserActionButton = () => {
   return (
     <div>
       <Link href="/api/auth/signin" className="">Sign In</Link>
@@ -6,4 +7,4 @@ export const userActionButton = () => {
   )
 }
 
-export default userActionButton;
+export default UserActionButton;
