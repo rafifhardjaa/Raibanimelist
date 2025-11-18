@@ -1,26 +1,36 @@
-export const getAnimeResponse = async (resource, query) => {
-  const response = await fetch(`${process.env.NEXT_PUBLIC_API_BASE_URL}/${resource}?${query}`);
-  console.log(response);
+// Ambil data anime dari API
+export const getAnimeResponse = async (resource, query = "") => {
+  const url = `${process.env.NEXT_PUBLIC_API_BASE_URL}/${resource}?${query}`;
+  const response = await fetch(url);
+
   if (!response.ok) {
-    throw new Error("Failed to fetch anime data sir");
+    throw new Error(`Failed to fetch anime data from ${url}`);
   }
 
-  const anime = await response.json();
-  return anime;
+  const data = await response.json();
+  return data;
 }
 
+// Ambil property nested dari data anime
 export const getNestedAnimeResponse = async (resource, objectProperty) => {
-  const response = await getAnimeResponse(resource)
-  return response.data.flatMap(item => item[objectProperty])
+  const response = await getAnimeResponse(resource);
 
+  // pastikan response.data ada
+  if (!response?.data) return [];
+
+  // flatMap biar semua nested property jadi satu array
+  return response.data.flatMap(item => item[objectProperty] || []);
 }
-//200 data anime max
-export const reproduce = (data, gap) => {
-  const first = ~~(Math.random() * (data.length - gap) + 1) //10
-  const last = first + gap
 
-  const response = {
-    data: data.slice(first, last)
-  }
-  return response
+// Ambil slice random dari array data (max gap data)
+export const reproduce = (data, gap) => {
+  if (!data.length) return { data: [] };
+
+  const maxStart = Math.max(data.length - gap, 0);
+  const start = Math.floor(Math.random() * (maxStart + 1));
+  const end = start + gap;
+
+  return {
+    data: data.slice(start, end)
+  };
 }
