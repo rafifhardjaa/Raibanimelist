@@ -4,7 +4,11 @@ export const getAnimeResponse = async (resource, query = "") => {
   const response = await fetch(url);
 
   if (!response.ok) {
+<<<<<<< HEAD
     throw new Error(`Failed to fetch anime data from ${url}`);
+=======
+    throw new Error("Failed to fetch anime data, try another method");
+>>>>>>> 62bfe413ca93f9d1475085e002bd30d03dd41dd5
   }
 
   const data = await response.json();
