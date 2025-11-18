@@ -17,13 +17,36 @@ img:hover {
 }
 /* HTML: <div class="loader"></div> */
 .loader {
-  width: 80px;
-  aspect-ratio: 1;
-  background: #ff3d71;
-    clip-path: polygon(100.00% 50.00%,64.14% 64.14%,50.00% 100.00%,35.86% 64.14%,0.00% 50.00%,35.86% 35.86%,50.00% 0.00%,64.14% 35.86%);
-  mask: radial-gradient(circle 5px,#0000 90%,#000);
-  animation: l1 1.5s infinite linear;
+width: 80px;
+aspect-ratio: 1;
+background: #6C5CE7;
+clip-path: polygon(
+100% 50%,
+64.14% 64.14%,
+50% 100%,
+35.86% 64.14%,
+0% 50%,
+35.86% 35.86%,
+50% 0,
+64.14% 35.86%
+);
+mask: radial-gradient(circle 6px, #0000 90%, #000);
+animation: rotateGlow 1.6s infinite cubic-bezier(.55,.2,.45,1);
+border-radius: 10px;
+box-shadow: 0 0 12px #6C5CE799, 0 0 18px #00CEC955 inset;
 }
-@keyframes l1{ 
-  100%{transform: rotate(1turn)}
+
+@keyframes rotateGlow {
+0% {
+transform: rotate(0deg) scale(1);
+box-shadow: 0 0 12px #6C5CE777, 0 0 20px #00CEC933 inset;
+}
+50% {
+transform: rotate(180deg) scale(1.08);
+box-shadow: 0 0 22px #6C5CE7cc, 0 0 30px #00CEC988 inset;
+}
+100% {
+transform: rotate(360deg) scale(1);
+box-shadow: 0 0 12px #6C5CE777, 0 0 20px #00CEC933 inset;
+}
 }

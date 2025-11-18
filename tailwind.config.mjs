@@ -15,11 +15,12 @@ export default {
     colors: {
       color: {
 
-        primary: '#ff3d71',
-        accent: '#ffcc00',
-        secondary: '#1e1e2e',
-        dark: '#13131a',
-        light: '#ffffff',
+primary: '#6C5CE7',
+accent: '#00CEC9',
+secondary: '#F1F2F6',
+dark: '#2D3436',
+light: '#FFFFFF',
+
 
       }
     }
