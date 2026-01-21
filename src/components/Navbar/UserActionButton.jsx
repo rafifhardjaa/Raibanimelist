@@ -8,8 +8,11 @@ export const UserActionButton  = async () => {
   const actionURL = user ? "/api/auth/signout" : "/api/auth/signin"
 
   return (
-    <div>
-      <Link href={actionURL} className="text-2xl text-color-primary">{actionLabel}</Link>
+    <div className="flex justify-between gap-3 items-center">
+      {
+        user? <Link href="/users/dashboard" className=" text-color-primary py-1 hover:underline">Dashboard</Link> : null
+      }
+      <Link href={actionURL} className=" text-color-light bg-color-primary py-1 px-12 inline-block hover:underline">{actionLabel}</Link>
     </div>
   )
 }

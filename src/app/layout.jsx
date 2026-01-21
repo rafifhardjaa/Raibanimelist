@@ -8,8 +8,8 @@ const montserrat = Montserrat({
 });
 
 export const metadata = {
-  title: "Deer Anime List",
-  description: "Website Anime Indonesia",
+  title: "Deenime",
+  description: "Anime world for everyone",
 };
 
 export default function RootLayout({ children }) {
